@@ -31,27 +31,52 @@ const EventSchema = new Schema({
 
 const Event = mongoose.model('Event', EventSchema);
 
-// More middleware
-app.get('/api/data', (req, res) => {
+// Middleware for event
+app.get('/api/event', (req, res) => {
     Event.find()
       .then(events => res.json(events))
       .catch(err => res.status(400).json('Error: ' + err));
 });
 
-app.post('/api/data', (req, res) => {
+app.post('/api/event', (req, res) => {
     const newEvent = new Event(req.body);
-    console.log("Working POST!");
+    console.log("Working POST! for event");
     newEvent.save()
       .then(() => res.json("Event added"))
       .catch(err => res.status(400).json('Error: ' + err));
 });
 
+const BlogSchema = new Schema({
+    name: {type: String, required: true},
+    email: {type: String, required: false},
+    post: {type: String, required: true}
+})
+
+const Blog = mongoose.model('Blog', BlogSchema);
+
+// Middleware for blog
+app.get('/api/blog', (req, res) => {
+    Blog.find()
+      .then(blogs => res.json(blogs))
+      .catch(err => res.status(400).json('Error : ' + err));
+});
+
+app.post('/api/blog', (req, res) => {
+    const newBlog = new Blog(req.body);
+    console.log("Working POST! for event");
+    newBlog.save()
+      .then(() => res.json("Blog added"))
+      .catch(err => res.status(400).jsom('Error: ' + err))
+});
+
+
+
 // Middleware
-app.listen(5174, () => console.log('Server started on port 5173'));
+app.listen(5174, () => console.log('Server started on port 5174'));
 
 // If you want to use this in a .jsx file, do the following:
 
-
+// EVENTS
 // const event = {
 //     eventName: 'My Event',
 //     hour: 12,
@@ -63,7 +88,7 @@ app.listen(5174, () => console.log('Server started on port 5173'));
 //     websiteURL: 'https://myevent.com'
 //   };
   
-//   fetch('http://localhost:5174/api/data', {
+//   fetch('http://localhost:5174/api/event', {
 //     method: 'POST',
 //     headers: {
 //       'Content-Type': 'application/json',
@@ -73,3 +98,21 @@ app.listen(5174, () => console.log('Server started on port 5173'));
 //   .then(response => response.json())
 //   .then(data => console.log(data))
 //   .catch((error) => console.error('Error:', error));
+
+// BLOGS
+// const blog = {
+//     name: "This man",
+//     email: "123@exampleemail.com",
+//     post: "This is an example post"
+// };
+
+// fetch('http://localhost:5174/api/blog', {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(blog),
+// })
+// .then(response => response.json())
+// .then(data => console.log(data))
+// .catch((error) => console.error('Error: ', error));
