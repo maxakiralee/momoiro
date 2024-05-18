@@ -2,7 +2,7 @@
 To set up the project, simply run:
 ```shell
 npm install
-npm run dev
+npm run start
 ```
 
 # React + Vite
