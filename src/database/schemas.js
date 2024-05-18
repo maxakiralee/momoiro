@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 // Events
 const EventSchema = new Schema({
     eventName: {type: String, required: true},
+    organizer: {type: String, required: true},
     hour: {type: Number, required: true, enum: Array.from({length: 24}, (_, i) => i)},
     day: {type: Number, required: true, min: 1, max: 31, validate: {validator: Number.isInteger}},
     month: {type: Number, required: true, min: 1, max: 12, validate: {validator: Number.isInteger}},

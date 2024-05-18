@@ -3,6 +3,7 @@ If you want to push to the database in a .jsx file, do the following:
 // EVENTS
 const event = {
     eventName: 'My Event',
+    organizer: 'Dude',
     hour: 12,
     day: 1,
     month: 1,
