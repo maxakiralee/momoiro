@@ -6,10 +6,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Blog from './components/pages/Blog';
 import Events from './components/pages/Events';
 
-// DELETE LATER
-const user = import.meta.env.VITE_DB_USER;
-const password = import.meta.env.VITE_DB_PASSWORD;
-
 function App() {
   return (
     <Router>
