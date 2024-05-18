@@ -1,0 +1,40 @@
+.mission-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+    grid-template-rows: repeat(2, 1fr); /* Creates two rows */
+    gap: 20px; /* Space between cards */
+    height: 100vh;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: rgb(240, 254, 217);
+  }
+  
+  .card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .mission-container {
+      grid-template-columns: 1fr; /* Single column on smaller screens */
+      grid-template-rows: repeat(4, 1fr); /* Four rows for four cards */
+    }
+  }
+  
