@@ -8,21 +8,12 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+// Enable CORS
+app.use(cors());
+
 // Connect to database
 mongoose.connect(process.env.VITE_CONNECTION_URL)
 
-// Middleware
-app.use(cors());
-
-app.get('/api/data', (req, res) => {
-    // Handling GET request
-});
-
-app.post('/api/data', (req, res) => {
-    // Handling POST request
-});
-
-app.listen(5173, () => console.log('Server started on port 5173'));
 
 // Schemas
 const { Schema } = mongoose;
@@ -40,17 +31,45 @@ const EventSchema = new Schema({
 
 const Event = mongoose.model('Event', EventSchema);
 
-// Below posts an Event
+// More middleware
+app.get('/api/data', (req, res) => {
+    Event.find()
+      .then(events => res.json(events))
+      .catch(err => res.status(400).json('Error: ' + err));
+});
 
-// const addEvent = new Event({
-//     eventName: "Hello",
-//     hour: 10,
-//     day: 3,
-//     month: 5,
-//     year: 6,
-//     location: "This place",
-//     description: "A description",
-//     websiteURL: "cornhub.corn"
-// })
+app.post('/api/data', (req, res) => {
+    const newEvent = new Event(req.body);
+    console.log("Working POST!");
+    newEvent.save()
+      .then(() => res.json("Event added"))
+      .catch(err => res.status(400).json('Error: ' + err));
+});
 
-// addEvent.save();
+// Middleware
+app.listen(5174, () => console.log('Server started on port 5173'));
+
+// If you want to use this in a .jsx file, do the following:
+
+
+// const event = {
+//     eventName: 'My Event',
+//     hour: 12,
+//     day: 1,
+//     month: 1,
+//     year: 2024,
+//     location: 'Los Angeles',
+//     description: 'This is a description of my event.',
+//     websiteURL: 'https://myevent.com'
+//   };
+  
+//   fetch('http://localhost:5174/api/data', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(event),
+//   })
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch((error) => console.error('Error:', error));
