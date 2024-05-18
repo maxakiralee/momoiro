@@ -1,0 +1,77 @@
+If you want to push to the database in a .jsx file, do the following:
+
+// EVENTS
+const event = {
+    eventName: 'My Event',
+    hour: 12,
+    day: 1,
+    month: 1,
+    year: 2024,
+    location: 'Los Angeles',
+    description: 'This is a description of my event.',
+    websiteURL: 'https://myevent.com'
+  };
+  
+  fetch('http://localhost:5174/api/event', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(event),
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch((error) => console.error('Error:', error));
+
+// BLOGS
+const blog = {
+    name: "This man",
+    email: "123@exampleemail.com",
+    title: "this is a title",
+    post: "This is an example post"
+};
+
+fetch('http://localhost:5174/api/blog', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(blog),
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch((error) => console.error('Error: ', error));
+
+
+
+
+If you want to fetch data from the database into a .jsx file:
+(Note this is done inside a function()):
+
+  // EVENTS
+  // This allows you to then do console.log(events) to see all the events
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5174/api/event')
+      .then(response => response.json())
+      .then(data => setEvents(data))
+      .catch((error) => console.error('Error: ', error));
+  }, []);
+
+  // BLOGS
+  // This allows you to then do console.log(blogs) to see all the blogs
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5174/api/blog')
+      .then(response => response.json())
+      .then(data => setBlogs(data))
+      .catch((error) => console.error('Error: ', error))
+  }, [])
+
+
+Note for a nicer print, you can also do:
+console.log(JSON.stringify(blogs, null, 2))
+Replace blogs with events if needed
+
