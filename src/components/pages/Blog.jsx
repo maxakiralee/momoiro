@@ -1,10 +1,14 @@
 import React from 'react';
 
+import Posts from '../Posts';
+
 function Blog() {
   return (
     <div>
       <h1>Blog Page</h1>
-      {/* Other content */}
+
+        <Posts></Posts>
+
     </div>
   );
 }
