@@ -13,7 +13,7 @@ export const useFetch = (url) => {
   useEffect(() => {
     fetch('http://localhost:5174/api/blog')
       .then(response => response.json())
-      .then(data => setBlogs(data))
+      .then(data => setBlogs(data.reverse()))
       .catch((error) => console.error('Error: ', error))
   }, [])
 
