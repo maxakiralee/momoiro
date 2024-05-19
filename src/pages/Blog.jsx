@@ -1,7 +1,7 @@
 import React from 'react';
 
-import PostComp from '../BlogComp';
-import Posts from '../Posts';
+import PostComp from '../components/BlogComp';
+import Posts from '../components/Posts';
 
 const postsArray = [
   {

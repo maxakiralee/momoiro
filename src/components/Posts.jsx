@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Posts.css";
+import "../styling/Posts.css";
 
 
    

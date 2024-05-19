@@ -1,5 +1,5 @@
 import React from 'react';
-import Drop from '../Drop';
+import Drop from '../components/Drop';
 
 
 const events = [

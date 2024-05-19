@@ -1,5 +1,5 @@
 import React from 'react';
-import './Review.css'; // Ensure to import the CSS file
+import '../styling/Review.css'; // Ensure to import the CSS file
 
 function Review() {
   return (
