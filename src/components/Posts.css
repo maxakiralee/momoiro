@@ -3,7 +3,7 @@ body {
     padding: 0;
   }
   
-  .App {
+  .Posts {
     position: relative;
     display: flex;
     height: 100vh;
@@ -11,33 +11,5 @@ body {
     text-align: center;
     justify-content: center;
     align-items: center;
-  }
-  
-  .left-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 1rem;
-  }
-  
-  .right-top {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1rem;
-  }
-  
-  .left-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-  }
-  
-  .right-bottom {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 1rem;
   }
   

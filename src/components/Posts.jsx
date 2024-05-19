@@ -1,54 +1,69 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Posts.css";
 
-const Words = () => {
-  let arr = ["These", "are", "random", "letters"];
-  let x, y, size;
-
-  const getRandomInt = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-  };
-
-  function getRandomColor() {
-    var letters = "0123456789ABCDEF";
-    var color = "#";
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
-
-  return arr.map((value, i) => {
-    x = getRandomInt(10, 70);
-    y = getRandomInt(10, 70);
-    size = getRandomInt(1, 10);
-    return (
-      <div
-        key={i}
-        style={{
-          position: "absolute",
-          top: `${y + i}%`,
-          left: `${x + i}%`,
-          fontSize: `${size}vw`,
-          background: getRandomColor()
-        }}
-      >
-        {value}
-      </div>
-    );
-  });
+const getRandomInt = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; // The maximum is exclusive and the minimum is inclusive
 };
 
-export default function App() {
+const getRandomColor = () => {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+const Words = () => {
+  const [words, setWords] = useState([]);
+  const disappearTime = 5000; // Time in milliseconds after which a word disappears
+
+  useEffect(() => {
+    const arr = ["These", "are", "random", "letters"];
+    const intervalId = setInterval(() => {
+      const newWord = {
+        id: Date.now() + Math.random(), // Unique ID using timestamp and random number
+        text: arr[Math.floor(Math.random() * arr.length)],
+        x: getRandomInt(0, 70),
+        y: getRandomInt(0, 50),
+        size: getRandomInt(5, 10),
+        color: getRandomColor(),
+      };
+
+      setWords(prevWords => [...prevWords, newWord]);
+
+      // Set timeout to remove the word after `disappearTime`
+      setTimeout(() => {
+        setWords(prevWords => prevWords.filter(word => word.id !== newWord.id));
+      }, disappearTime);
+    }, 1000); // Add a new word every second
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return words.map((word) => (
+    <div
+      key={word.id}
+      style={{
+        position: "absolute",
+        top: `${word.y}%`,
+        left: `${word.x}%`,
+        fontSize: `${word.size}vw`,
+        background: word.color,
+      }}
+    >
+      {word.text}
+    </div>
+  ));
+};
+
+export default function Posts() {
   return (
-    <div className="App">
+    <div className="Posts">
       <Words />
-      <small className="left-top">13405</small>
-      <small className="right-top">13405</small>
-      <small className="left-bottom">13405</small>
-      <small className="right-bottom">13405</small>
     </div>
   );
 }
