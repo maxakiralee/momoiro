@@ -19,7 +19,8 @@ const InputForm = ({ onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can perform submission logic here
+
+    // Create the blog skeleton
     const blog = {
       name: formData.name,
       email: formData.email,
@@ -27,6 +28,7 @@ const InputForm = ({ onClose }) => {
       post: formData.textEntry
     };
 
+    // Post the blog to the database
     fetch('http://localhost:5174/api/blog', {
     method: 'POST',
     headers: {
