@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
-import "../styling/Posts.css";
+import React from "react";
+import styles from "../styling/Posts.module.css"
 
-
-   
 export default function Posts({name, email, title, entry}) {
   return (
-      <div className='card'>
-            <h2 className='card-title'>{title}</h2>
-            <p className='card-role'>{name}</p>
-            <p className='card-role'>{email}</p>
-            <p className='card-org-description'>{entry}</p>
-        </div>
+    <div className={styles.card}>
+      <h2 className={styles.title}>{title}</h2>
+      <p className={styles.name}>{name}</p>
+      <p className={styles.email}>{email}</p>
+      <p className={styles.entry}>{entry}</p>
+    </div>
   );
 }
