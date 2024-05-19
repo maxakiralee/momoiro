@@ -1,87 +1,88 @@
 import React from 'react';
 import Drop from '../components/Drop';
-
-
-const events = [
+const people = [
   {
     name: 'Mindful Mornings: Yoga & Meditation at Sunrise',
-    date: 'May 1',
-    time: '5am',
-    role: 'Co-Founder / CEO',
+    role: 'May 24th, 2024',
     imageUrl:
-    'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9nYXxlbnwwfHwwfHx8MA%3D%3D',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z',
-  },
-  {
-    name: 'Art Heals: A Creative Escape Workshop',
-    date: 'May 13',
-    time: '3pm',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9nYXxlbnwwfHwwfHx8MA%3D%3D',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z',
-  },
-  {
-    name: 'Echoes of Maui: Storytelling Under the Stars',
-    date: 'May 13',
-    time: '3pm',
-        role: 'Business Relations',
-    imageUrl:
-    'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9nYXxlbnwwfHwwfHx8MA%3D%3D',
-    lastSeen: null,
-  },
-  {
-    name: 'Family Fun Day: Games and Wellness Activities',
-    date: 'May 13',
-    time: '3pm',
-    role: 'Front-end Developer',
-    imageUrl:
-    'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9nYXxlbnwwfHwwfHx8MA%3D%3D',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z',
+      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2202&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    
   },
   {
     name: 'Maui Movie Nights: Films for Thought and Healing',
-    date: 'May 13',
-    time: '3pm',
-   role: 'Designer',
+    role: 'May 29th, 2024',
     imageUrl:
-    'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9nYXxlbnwwfHwwfHx8MA%3D%3D',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z',
+      'https://images.unsplash.com/photo-1540266908617-307d8bdaacbb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fG1vdmllJTIwbmlnaHR8ZW58MHx8MHx8fDA%3D',
+   
   },
-  
+  {
+    name: 'Family Fun Day: Games and Wellness Activities',
+    role: 'June 3rd, 2024',
+    imageUrl:
+      'https://plus.unsplash.com/premium_photo-1661677680531-e045f65191b7?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    xUrl: '#',
+    linkedinUrl: '#',
+  },
+  {
+    name: 'Rhythms of Recovery: A Drum Circle Experience',
+    role: 'June 2nd, 2024',
+    imageUrl:
+      'https://plus.unsplash.com/premium_photo-1661370180690-9d1cc8db7890?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    xUrl: '#',
+    linkedinUrl: '#',
+  },
+  {
+    name: 'Culinary Healing: A Healthy Cooking Class Series',
+    role: 'June 15th, 2024',
+    imageUrl:
+      'https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fG91dGRvb3IlMjBjb29raW5nfGVufDB8fDB8fHww',
+    xUrl: '#',
+    linkedinUrl: '#',
+  },
+  {
+    name: 'Paddle for Peace: A Unique Kayaking Journey',
+    role: 'June 17th, 2024',
+    imageUrl:
+      'https://images.unsplash.com/photo-1542259009477-d625272157b7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWF1aXxlbnwwfHwwfHx8MA%3D%3D',
+    xUrl: '#',
+    linkedinUrl: '#',
+  },
 ]
 
 export default function Events() {
   return (
-    <div>
-      <div className="flex justify-between items-center"> {/* Flex container to align items horizontally */}
-        <h1 className="p-10" >Sign up for new events today! </h1>
-        <div className="p-10">
-  <Drop />
-</div>
-
+    <div className="bg-white py-14 sm:py-12">
+      <div className="mx-auto max-w-7xl px-3 lg:px-8">
+        
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Recent Events</h2>
+          <div className=" flex justify-between items-center ">
+             <p className="mt-6 text-lg leading-8 text-gray-600">
+          Welcome to our Events Page—connect, share your story, and discover  < br /> community support and services, all in one place! 
+          </p>
+          <Drop />
+        </div>
+  
+        <ul
+          role="list"
+          className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+        >
+          {people.map((person) => (
+            <li key={person.name}>
+              <img className="aspect-[3/2] w-full rounded-2xl object-cover" src={person.imageUrl} alt="" />
+              <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">{person.name}</h3>
+              <p className="text-base leading-7 text-gray-600">{person.role}</p>
+              <ul role="list" className="mt-6 flex gap-x-6">
+            
+                <li>
+                <button className="  bg-indigo-900 px-4 py-2 text-white font-semibold hover:bg-blue-600">
+                    RSVP
+                  </button>
+                                  </li>
+              </ul>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul role="list" className="divide-y divide-gray-200 p-10">
-        {events.map((person) => (
-          <li key={person.email} className="flex justify-between gap-x-6 py-5">
-            <div className="flex min-w-0 gap-x-4">
-              <img className="h-20 w-20 flex-none rounded-full bg-gray-50" src={person.imageUrl} alt="" />
-              <div className="min-w-0 flex-auto">
-                <p className="text-4xl font-semibold leading-6 text-gray-900">{person.name}</p>
-                <p className="mt-1 truncate text-lg leading-5 text-gray-500">{person.date}, 2024 {person.time} </p>
-              </div>
-            </div>
-            <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-              <p className="text-xl leading-6 text-gray-900">{person.role}</p>
-      
-            </div>
-          </li>
-        ))}
-      </ul>
     </div>
-  );
+  )
 }
