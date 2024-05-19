@@ -26,11 +26,26 @@ const getFormattedDate = (day, month, year) => {
 export default function EventsComp({eventName, hour, day, month, year, location, description}) {
   const formattedDate = getFormattedDate(day, month, year);
 
+  const handleButtonClick = () => {
+    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSe6wikAQLjmWv0vIufJC4GOoeoc3tp64XmGN-NvMn_-1ghq6w/viewform";
+  };
+
   return (
     <div>
       <img src={calendar} alt="Example" className={styles.pic} style={{ width: '400px', height: '200px' }} />
       <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">{eventName}</h3>
       <p className="text-base leading-7 text-gray-600">{formattedDate}</p>
+
+      <ul role="list" className="mt-6 flex gap-x-6">
+        <li>
+          <button 
+            className="bg-indigo-900 px-4 py-2 text-white font-semibold hover:bg-blue-600"
+            onClick={handleButtonClick}
+          >
+            RSVP
+          </button>
+        </li>
+      </ul>
     </div>
   );
 }

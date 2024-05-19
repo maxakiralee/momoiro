@@ -62,7 +62,7 @@ function PostComp() {
           newWord = {
             id: Date.now() + Math.random(), // Unique ID using timestamp and random number
             text: randomBlog.title,
-            x: getRandomInt(25, 75),
+            x: getRandomInt(5, 60),
             y: getRandomInt(15, 60),
             size: getRandomInt(2, 5),
           };
@@ -75,7 +75,7 @@ function PostComp() {
           setWords(prevWords => prevWords.filter(word => word.id !== newWord.id));
         }, disappearTime);
       }
-    }, 1500); // Add a new word every second
+    }, 2500); // Add a new word every second
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);

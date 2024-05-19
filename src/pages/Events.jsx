@@ -66,7 +66,12 @@ function Events() {
       .catch((error) => console.error('Error: ', error));
   }, []);
 
+  const handleButtonClick = () => {
+    window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSe6wikAQLjmWv0vIufJC4GOoeoc3tp64XmGN-NvMn_-1ghq6w/viewform";
+  };
+  
   return (
+    <div>
     <div className="bg-white py-14 sm:py-10">
       <div className="mx-auto max-w-7xl px-3 lg:px-8">
         
@@ -99,7 +104,9 @@ function Events() {
               <ul role="list" className="mt-6 flex gap-x-6">
             
                 <li>
-                <button className="  bg-indigo-900 px-4 py-2 text-white font-semibold hover:bg-blue-600">
+                <button className="  bg-indigo-900 px-4 py-2 text-white font-semibold hover:bg-blue-600"
+                  onClick={handleButtonClick}
+                >
                     RSVP
                   </button>
                 </li>
@@ -125,7 +132,8 @@ function Events() {
 
         </ul>
       </div>
-      <Footer />
+    </div>
+    <Footer />
     </div>
   )
 }
