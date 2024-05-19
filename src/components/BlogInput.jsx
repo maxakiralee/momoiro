@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../styling/BlogInput.module.css';
 
-const InputForm = ({ onClose }) => {
+const BlogInput = ({ onClose }) => {
   const [formData, setFormData] = useState({
     title: '',
     name: '',
@@ -65,4 +65,4 @@ const InputForm = ({ onClose }) => {
   );
 };
 
-export default InputForm;
+export default BlogInput;
