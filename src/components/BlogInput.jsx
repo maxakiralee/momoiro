@@ -20,6 +20,24 @@ const InputForm = ({ onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // You can perform submission logic here
+    const blog = {
+      name: formData.name,
+      email: formData.email,
+      title: formData.title,
+      post: formData.textEntry
+    };
+
+    fetch('http://localhost:5174/api/blog', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(blog),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => console.error('Error: ', error));
+
     console.log(formData);
     // Close the modal after submission
     onClose();
