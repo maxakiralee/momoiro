@@ -9,7 +9,7 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
 
   return (
-    <nav className='navbar'>
+    <nav className='navbar bg-gradient-to-r from-blue-300 to-blue-100'>
       <div className='navbar-container'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           Maui Strong
@@ -36,7 +36,7 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             <Link to='/aboutus' className='nav-links' onClick={closeMobileMenu}>
-              AboutUs
+              About Us
             </Link>
           </li>
           <li className='nav-item'>
@@ -45,7 +45,6 @@ function Navbar() {
             </a>
           </li>
         </ul>
-       
       </div>
     </nav>
   );

@@ -11,7 +11,7 @@ const testimonials = [
     },
   },
   {
-    body: 'As a small business owner, the resources shared on Miami Strong have been invaluable. The event planner has allowed me to attend community meetings that have helped me rebuild my business stronger than ever.',
+    body: 'As a small business owner, the resources shared on Maui Strong have been invaluable. The event planner has allowed me to attend community meetings that have helped me rebuild my business stronger than ever.',
     author: {
       name: 'James Rodriguez',
       handle: 'jarosd',
@@ -20,7 +20,7 @@ const testimonials = [
     },
   },
   {
-    body: 'Maui Strong has been a beacon of hope during tough times. The informative blog articles and the well-organized events have kept my family informed and engaged in the recovery process',
+    body: 'Maui Strong has been a beacon of hope during tough times. The informative blog articles and the well-organized events have kept my family informed and engaged in the recovery process.',
     author: {
       name: 'Emily Davis',
       handle: 'edavis98',
@@ -29,7 +29,7 @@ const testimonials = [
     },
   },
   {
-    body: 'I found out about volunteer opportunities through the event planner on the Maui Wildfire Recovery site. Its given me a way to contribute to my community and make a difference',
+    body: 'I found out about volunteer opportunities through the event planner on the Maui Wildfire Recovery site. It\'s given me a way to contribute to my community and make a difference.',
     author: {
       name: 'Michael Lee',
       handle: 'leematichal',
@@ -38,7 +38,7 @@ const testimonials = [
     },
   },
   {
-    body: 'The Maui Wildfire Recovery websites blog has kept me updated on the latest recovery efforts and relief resources. The event planner has also helped me find and attend support group meetings, which have been incredibly helpful.',
+    body: 'The Maui Wildfire Recovery website\'s blog has kept me updated on the latest recovery efforts and relief resources. The event planner has also helped me find and attend support group meetings, which have been incredibly helpful.',
     author: {
       name: 'Aisha Patel',
       handle: 'apatel76',
@@ -56,14 +56,14 @@ const testimonials = [
     },
   },
   // More testimonials...
-]
+];
 
 export default function Review() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-gradient-to-r from-blue-300 to-blue-100 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">Testimonials</h2>
+          <h2 className="text-4xl font-bold leading-8 tracking-tight text-indigo-600">Testimonials</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             We have worked with thousands of amazing people
           </p>
@@ -72,7 +72,7 @@ export default function Review() {
           <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
             {testimonials.map((testimonial) => (
               <div key={testimonial.author.handle} className="pt-8 sm:inline-block sm:w-full sm:px-4">
-                <figure className="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
+                <figure className="rounded-2xl bg-white p-8 shadow-lg text-sm leading-6">
                   <blockquote className="text-gray-900">
                     <p>{`“${testimonial.body}”`}</p>
                   </blockquote>
@@ -90,5 +90,5 @@ export default function Review() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+
 const navigation = {
   main: [
     { name: 'About', href: '#' },
@@ -71,11 +72,11 @@ const navigation = {
       ),
     },
   ],
-}
+};
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
+    <footer className="bg-gradient-to-r from-blue-300 to-blue-100">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           {navigation.main.map((item) => (
@@ -95,9 +96,9 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; 2020 Your Company, Inc. All rights reserved.
+          &copy; 2024 Your Company, Inc. All rights reserved.
         </p>
       </div>
     </footer>
-  )
+  );
 }
