@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 
 import PostComp from '../components/BlogComp';
 import Posts from '../components/Posts';
+import ButtonComponent from '../components/BlogButton';
+
 import styles from '../styling/Blog.module.css'
 
 export const useFetch = (url) => {
@@ -25,7 +27,8 @@ function Blog() {
     <div>
       <h1>Blog Page</h1>
       <PostComp />
-      <h1>Posts</h1>
+      <h1 className={styles.margin}>Posts</h1>
+      <ButtonComponent></ButtonComponent>
       
       <div className={styles.container}>
         {blogs.map((blog) => {
