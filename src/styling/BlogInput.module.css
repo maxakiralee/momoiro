@@ -1,38 +1,33 @@
-.container {
-    position: fixed; /* Keep position fixed to ensure the modal stays in place */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
-}
-
 .form {
-    width: 500px; /* Increase the width */
-    background-color: white; /* Ensure the form has a background color */
-    padding: 20px; /* Add some padding */
-    border-radius: 8px; /* Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a slight shadow for depth */
-}
-
-.form label {
-    margin-bottom: 10px;
-    display: block; /* Make labels block elements */
+    width: 50%; /* Full width to match parent container */
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd; /* Add border to separate from background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px; /* Space between button and form */
 }
 
 .form input,
 .form textarea {
     width: 100%;
-    padding: 10px; /* Increase padding for better visibility */
+    padding: 10px;
     margin-bottom: 10px;
-    font-size: 16px; /* Increase font size for better readability */
+    font-size: 16px;
+    border-radius: 8px;
+    border-width: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.buttongroup {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
 }
 
 .form button {
     margin-top: 10px;
-    padding: 10px 20px; /* Increase button padding */
-    font-size: 16px; /* Increase button font size */
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
 }

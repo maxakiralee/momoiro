@@ -46,35 +46,22 @@ const InputForm = ({ onClose }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.form}>
-        <h2>Input Form</h2>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <label>
-            Title:
-            <input type="text" name="title" value={formData.title} onChange={handleChange} />
-          </label>
-          <br />
-          <label>
-            Name:
-            <input type="text" name="name" value={formData.name} onChange={handleChange} />
-          </label>
-          <br />
-          <label>
-            Email:
-            <input type="email" name="email" value={formData.email} onChange={handleChange} />
-          </label>
-          <br />
-          <label>
-            Text Entry:
-            <textarea name="textEntry" value={formData.textEntry} onChange={handleChange} />
-          </label>
-          <br />
+    <div className={styles.form}>
+    <form onSubmit={handleSubmit}>
+        Title:
+        <input type="text" name="title" value={formData.title} onChange={handleChange} />
+        Name:
+        <input type="text" name="name" value={formData.name} onChange={handleChange} />
+        Email:
+        <input type="email" name="email" value={formData.email} onChange={handleChange} />
+        Text Entry:
+        <textarea name="textEntry" value={formData.textEntry} onChange={handleChange} />
+        <div className={styles.buttongroup}>
           <button type="submit">Submit</button>
           <button type="button" onClick={onClose}>Close</button>
-        </form>
-      </div>
-    </div>
+        </div>
+    </form>
+  </div>
   );
 };
 
