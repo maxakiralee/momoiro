@@ -76,7 +76,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-blue-300 to-blue-100">
+    <footer className="bg-gradient-to-r from-blue-300 to-blue-100" style={{ marginTop: '30px' }}>
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           {navigation.main.map((item) => (

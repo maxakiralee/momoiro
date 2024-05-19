@@ -2,6 +2,7 @@ import React from 'react';
 import '../styling/AboutUs.css';
  import maui from './maui.jpg';
 import wordcloud from './word-cloud.png';
+import Footer from '../components/Footer';
 
 function AboutUs() {
   const handleButtonClick = () => {
@@ -12,6 +13,7 @@ function AboutUs() {
   };
 
   return (
+    <div>
     <div className="heading">
       <h1>OUR MISSION IS SIMPLE</h1>
       <div className="goal">
@@ -63,6 +65,9 @@ function AboutUs() {
           <button onClick={handleContactButtonClick} className="button-link">Contact Us!</button>
         </div>
       </div>
+    </div>
+    <Footer />
+
     </div>
   );
 }

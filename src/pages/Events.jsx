@@ -1,6 +1,10 @@
 import React from 'react';
 import Drop from '../components/Drop';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
+import EventsComp from '../components/EventsComp';
+
+import {useState, useEffect} from 'react';
 
 const people = [
   {
@@ -51,7 +55,17 @@ const people = [
   },
 ]
 
-export default function Events() {
+
+function Events() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5174/api/event')
+      .then(response => response.json())
+      .then(data => setEvents(data))
+      .catch((error) => console.error('Error: ', error));
+  }, []);
+
   return (
     <div className="bg-white py-14 sm:py-10">
       <div className="mx-auto max-w-7xl px-3 lg:px-8">
@@ -88,12 +102,33 @@ export default function Events() {
                 <button className="  bg-indigo-900 px-4 py-2 text-white font-semibold hover:bg-blue-600">
                     RSVP
                   </button>
-                                  </li>
+                </li>
               </ul>
             </li>
           ))}
+
+        {events.map((event) => {
+          return (
+            <div>
+              <EventsComp
+                eventName={event.eventName} 
+                hour={event.hour}
+                day={event.day}
+                month={event.month}
+                year={event.year} 
+                location={event.location}
+                description={event.description}
+              />
+            </div>
+          );
+        })}
+
         </ul>
       </div>
+      <Footer />
     </div>
   )
 }
+
+export default Events;
+

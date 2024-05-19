@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import PostComp from '../components/BlogComp';
 import Posts from '../components/Posts';
 import BlogButton from '../components/BlogButton';
+import Footer from '../components/Footer';
 
 import styles from '../styling/Blog.module.css'
 
@@ -26,9 +27,10 @@ function Blog() {
   return (
     <div>
       <PostComp />
-      <h1 className={styles.margin}></h1>
+      <h1 className={styles.margin1}></h1>
       <BlogButton></BlogButton>
-      
+      <h1 className={styles.margin2}></h1>
+
       <div className={styles.container}>
         {blogs.map((blog) => {
           return (
@@ -43,6 +45,7 @@ function Blog() {
           );
         })}
       </div>
+      <Footer />
     </div>
   );
 }

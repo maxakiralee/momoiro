@@ -62,8 +62,8 @@ function PostComp() {
           newWord = {
             id: Date.now() + Math.random(), // Unique ID using timestamp and random number
             text: randomBlog.title,
-            x: getRandomInt(15, 85),
-            y: getRandomInt(15, 50),
+            x: getRandomInt(25, 75),
+            y: getRandomInt(15, 60),
             size: getRandomInt(2, 5),
           };
         } while (checkOverlap(newWord, words));
@@ -75,7 +75,7 @@ function PostComp() {
           setWords(prevWords => prevWords.filter(word => word.id !== newWord.id));
         }, disappearTime);
       }
-    }, 2500); // Add a new word every second
+    }, 1500); // Add a new word every second
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);

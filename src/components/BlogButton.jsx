@@ -12,7 +12,7 @@ const BlogButton = () => {
   return (
     <div className={styles.container}>
       <button className={styles.button} onClick={toggleFormVisibility}>
-        Input your entry here!
+        Share Your Story
       </button>
       {isFormVisible && <BlogInput onClose={toggleFormVisibility} />}
     </div>
