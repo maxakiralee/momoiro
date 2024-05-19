@@ -72,7 +72,7 @@ function Events() {
   
   return (
     <div>
-    <div className="bg-white py-14 sm:py-10">
+    <div className=" py-14 sm:py-10">
       <div className="mx-auto max-w-7xl px-3 lg:px-8">
         
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Recent Events</h2>
