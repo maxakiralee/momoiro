@@ -26,8 +26,8 @@ export default function Example() {
     }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     // Adjust hour to match the database schema as integer
     const adjustedData = {
       ...formData,
@@ -35,8 +35,28 @@ export default function Example() {
       month: new Date(Date.parse(formData.month +" 1, 2021")).getMonth()+1, // Convert month name to month number
     };
 
-    console.log('Form Data:', adjustedData);
-    // Here, send adjustedData to the database
+    const event = {
+      eventName: adjustedData.eventName,
+      organizer: adjustedData.organizer,
+      hour: adjustedData.hour,
+      day: adjustedData.day,
+      month: adjustedData.month,
+      year: adjustedData.year,
+      location: adjustedData.location,
+      description: adjustedData.description,
+      websiteURL: adjustedData.websiteURL
+    };
+    
+    fetch('http://localhost:5174/api/event', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(event),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => console.error('Error:', error));
     
     navigate('/events'); // Navigate to '/events' page after form submission
 
