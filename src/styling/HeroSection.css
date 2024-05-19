@@ -1,45 +1,51 @@
+/* HeroSection.css */
+.hero-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
 
-  
-  .hero-container {
-    background: url(https://images.unsplash.com/photo-1715351190944-a32bc9a900ab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1Mnx8fGVufDB8fHx8fA%3D%3D) center center/cover no-repeat; ; 
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    background-color: lavender;
-    object-fit: contain;
-    
-  }
-  
-  .hero-container > h1 {
-    color: #f2f2f2;
-    font-size: 100px;
-    margin-top: -100px;
-  }
-  
-  .hero-container > p {
-    margin-top: 358px;
-    
-    color: #ffffff;
-    font-size: 32px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-      'Lucida Sans', Arial, sans-serif;
-      margin-left: 40px;
-  }
-  
-  .hero-btns {
-    margin-top: 32px;
-    margin-left: 40px;
-  }
-  
-  .hero-btns .btn {
-    margin: 6px;
-  }
-  
-  .fa-play-circle {
-    margin-left: 4px;
-  }
-  
- 
+.hero-image {
+  flex: 2;
+  background: url('https://ca-times.brightspotcdn.com/dims4/default/ab0a20f/2147483647/strip/true/crop/3000x2000+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fe8%2Ffc%2Fde64137245828c6bfafe7e768649%2F1334014-na-0814-maui-fire-72-rcg.jpg') center center/cover no-repeat;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  background: linear-gradient(to right, #90CDF4, #EBF8FF); /* Baby blue gradient */
+  text-align: center; /* Center align text */
+}
+
+.hero-content h1 {
+  color: black;
+  font-size: 8vw; /* Dynamic font size */
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.hero-content p {
+  margin-top: 20px;
+  color: #6b46c1; /* Purple color */
+  font-size: 32px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+
+.hero-btns {
+  margin-top: 32px;
+}
+
+.hero-btns .btn {
+  margin: 6px;
+}
+
+.fa-play-circle {
+  margin-left: 4px;
+}
