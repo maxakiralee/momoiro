@@ -1,5 +1,7 @@
 import React from 'react';
 import Drop from '../components/Drop';
+import { Link } from 'react-router-dom';
+
 const people = [
   {
     name: 'Mindful Mornings: Yoga & Meditation at Sunrise',
@@ -51,7 +53,7 @@ const people = [
 
 export default function Events() {
   return (
-    <div className="bg-white py-14 sm:py-12">
+    <div className="bg-white py-14 sm:py-10">
       <div className="mx-auto max-w-7xl px-3 lg:px-8">
         
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Recent Events</h2>
@@ -60,6 +62,15 @@ export default function Events() {
           Welcome to our Events Page—connect, share your story, and discover  < br /> community support and services, all in one place! 
           </p>
           <Drop />
+          
+        </div>
+
+        <div className=" flex justify-end">
+        <Link to="/newevent">
+      <button className="bg-zinc-900 px-4 py-2 text-white font-semibold">
+        Create New Event
+      </button>
+    </Link>
         </div>
   
         <ul

@@ -12,7 +12,7 @@ export default function Example() {
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-          Options
+          Sort By
           <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
         </Menu.Button>
       </div>
@@ -37,7 +37,7 @@ export default function Example() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Account settings
+                  Relevance
                 </a>
               )}
             </Menu.Item>
@@ -50,7 +50,7 @@ export default function Example() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Support
+                  Most Popular
                 </a>
               )}
             </Menu.Item>
@@ -63,7 +63,7 @@ export default function Example() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  License
+                  Most Recently Posted
                 </a>
               )}
             </Menu.Item>
@@ -77,7 +77,7 @@ export default function Example() {
                       'block w-full px-4 py-2 text-left text-sm'
                     )}
                   >
-                    Sign out
+                    Recommended
                   </button>
                 )}
               </Menu.Item>

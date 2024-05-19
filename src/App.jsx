@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Blog from './pages/Blog';
 import Events from './pages/Events';
 import AboutUs from './pages/AboutUs';
+import NewEvent from './pages/NewEvent';
+
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
         <Route path='/blog' element={<Blog />} />
         <Route path='/events' element={<Events />} />
         <Route path='/aboutus' element={<AboutUs />} />
+        <Route path='/newevent' element={<NewEvent />} />
 
         </Routes>
       </div>
