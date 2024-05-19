@@ -35,6 +35,11 @@ function Navbar() {
             </Link>
           </li>
           <li className='nav-item'>
+            <Link to='/aboutus' className='nav-links' onClick={closeMobileMenu}>
+              AboutUs
+            </Link>
+          </li>
+          <li className='nav-item'>
             <a href='https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=3FKQTKLQBB6PS&source=url' target="_blank" rel="noopener noreferrer" className='nav-links-d' onClick={closeMobileMenu}>
               Donate 
             </a>

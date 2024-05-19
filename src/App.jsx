@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Blog from './pages/Blog';
 import Events from './pages/Events';
+import AboutUs from './pages/AboutUs';
 
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
         <Route path='/' element={<Home />} exact />
         <Route path='/blog' element={<Blog />} />
         <Route path='/events' element={<Events />} />
+        <Route path='/aboutus' element={<AboutUs />} />
+
         </Routes>
       </div>
     </Router>
