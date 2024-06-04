@@ -19,7 +19,7 @@ export const AudioProvider = ({ children }) => {
   return (
     <AudioContext.Provider value={{ playAudio }}>
       {children}
-      <audio ref={audioRef} src='maxakiralee.github.io/momoiro/src/music.mp3' loop />
+      <audio ref={audioRef} src='/maxakiralee.github.io/momoiro/src/music.mp3' loop />
     </AudioContext.Provider>
   );
 };
