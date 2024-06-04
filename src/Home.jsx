@@ -10,8 +10,9 @@ function Home() {
   return (
     <div className={style.container}>
       <p className={style.text}>
-        headphones on, volume up 😴🎶🔊
+        use laptop! headphones on, volume up 😴🎶🔊
       </p>
+
       <Link to="/momoiro/slides" className={style.startButtonLink}>
         <button className={style.startButton} onClick={playAudio}>START</button>
         </Link>
