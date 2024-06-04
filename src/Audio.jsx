@@ -1,5 +1,6 @@
 // AudioContext.js
 import React, { createContext, useContext, useRef } from 'react';
+import AudioFile from './music.mp3';
 
 const AudioContext = createContext();
 
@@ -16,10 +17,11 @@ export const AudioProvider = ({ children }) => {
     }
   };
 
+
   return (
     <AudioContext.Provider value={{ playAudio }}>
       {children}
-      <audio ref={audioRef} src='/maxakiralee.github.io/momoiro/src/music.mp3' loop />
+      <audio ref={audioRef} src={AudioFile} loop />
     </AudioContext.Provider>
   );
 };

@@ -69,7 +69,7 @@ function Slides() {
     "just like you are my favorite person 😃😃",
     "(i think it was bright pink? may be wrong mbmb)",
     "ALSO",
-    "ALSO When you get back…",
+    "when you get back…",
     "yogurtland on me 🫡🍨🍦🍪",
     "i owe u one",
     "Thank you for staying in my life - Max",
