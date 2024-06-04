@@ -16,15 +16,6 @@
   -webkit-user-drag: none; /* Prevent dragging on WebKit browsers */
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .text {
   position: absolute;
   text-align: center; /* Center the text horizontally */
@@ -74,3 +65,52 @@
   background-color: #004080; /* Even darker shade */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 } 
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.startButtonLink {
+  display: flex; /* Center the link */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: absolute; 
+  bottom: 30%;
+}
+
+.startButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute; 
+  bottom: 30%;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #007BFF; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  border-width: 2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.startButton:hover {
+  background-color: #0237f7; /* Darker shade of primary color */
+  transform: scale(1.15);
+  box-shadow: 0 12px 12px rgba(38, 0, 255, 0.2);
+}
+
+.startButton:active {
+  background-color: #004080; /* Even darker shade */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

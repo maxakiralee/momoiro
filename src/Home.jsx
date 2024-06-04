@@ -12,7 +12,7 @@ function Home() {
       <p className={style.text}>
         headphones on 😴
       </p>
-      <Link to="/slides" className={style.startButtonLink}>
+      <Link to="/momoiro/slides" className={style.startButtonLink}>
         <button className={style.startButton} onClick={playAudio}>START</button>
         </Link>
 

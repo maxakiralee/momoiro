@@ -9,8 +9,8 @@ function App() {
     <Router>
       <AudioProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/slides" element={<Slides />} />
+          <Route path="/momoiro" element={<Home />} />
+          <Route path="/momoiro/slides" element={<Slides />} />
         </Routes>
       </AudioProvider>
     </Router>
